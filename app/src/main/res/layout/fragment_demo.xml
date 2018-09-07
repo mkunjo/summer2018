@@ -3,12 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.DemoFragment">
+    tools:context=".Fragment.DemoFragment"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- TODO: Update blank Fragment layout -->
+    <ListView
+        android:id="@+id/main_demo_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@android:color/holo_red_dark"
+        />
 
 </FrameLayout>

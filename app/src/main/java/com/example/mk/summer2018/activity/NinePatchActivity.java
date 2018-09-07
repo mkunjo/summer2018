@@ -3,6 +3,8 @@ package com.example.mk.summer2018.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.mk.summer2018.R;
+
 public class NinePatchActivity extends AppCompatActivity {
 
     @Override

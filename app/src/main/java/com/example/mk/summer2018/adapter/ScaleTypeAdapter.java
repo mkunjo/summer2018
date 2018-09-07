@@ -7,35 +7,37 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class ScalePagerAdapter extends PagerAdapter {
+public class ScaleTypeAdapter extends PagerAdapter {
+    //We pass a context to the constructor to inflate the view
+    private List<View> viewList;
 
-    private final ArrayList<View> list;
+    public ScaleTypeAdapter(List<View> viewList){
+        this.viewList = viewList;
 
-    public ScalePagerAdapter(ArrayList<View> list) {
-        this.list = list;
     }
+
 
     @Override
     public int getCount() {
-        return list.size();
+        return viewList.size();
+    }
+
+    @Override
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+        return view==object;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        container.addView(list.get(position), 0);
-        Log.e("TRACE","instantiateItem position=" + position);
-        return list.get(position);
+        container.addView(viewList.get(position), 0);
+        return viewList.get(position);
     }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView(list.get(position));
-    }
-
-    @Override
-    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view == object;
+        container.removeView(viewList.get(position));
     }
 }
